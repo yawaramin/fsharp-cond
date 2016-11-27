@@ -11,11 +11,11 @@ module Cond =
       cons_decltype.IsGenericType &&
       cons_decltype.GetGenericTypeDefinition() = typedefof<_ list>)
 
-  let rec cond<'a> : Expr -> 'a = function
+  let rec cond (default_val : 'a) = function
     | NewUnionCase (cons, [NewTuple [condition; value]; tail])
       when is_cons cons ->
       if QuotationEvaluator.Evaluate <| Expr.Cast(condition)
-        then QuotationEvaluator.Evaluate <| Expr.Cast(value)
-        else cond tail
+        then QuotationEvaluator.Evaluate <| Expr.Cast<'a>(value)
+        else cond default_val tail
         
     | _ -> raise <| MatchFailureException ("cond", 0, 0)
