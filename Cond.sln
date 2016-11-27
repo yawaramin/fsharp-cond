@@ -5,6 +5,12 @@ Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "Core", "Core\Core.fsproj", 
 EndProject
 Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "Tests", "Tests\Tests.fsproj", "{1377C7A5-408B-406E-BF2B-8CFF9E8BF1EF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{74017EAE-D2AC-4C5A-AA3A-7A1D4D39B205}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
